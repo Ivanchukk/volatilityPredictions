@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VOlatility Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body style="background: rgb(252, 250, 250);">
+  <div class="login">
+   <h1 style="text-align:center">Crypto Market Volatility Predictions</h1>
+   <h2 style="text-align:left">Data Recording form</h2>
+   <form action="{{ url_for('admin')}}" method="post">
+     <label for="start_recording_date" colo>start recording date  </label>
+     <input type="test" name="start_recording_date" placeholder="2021/1/13" required="required">
+     <br>
+     <br>
+     <label for="market">Market:  </label>
+     <input type="text" name="market" placeholder="market" required="required">
+     <br>
+     <br>
+     <label for="minutesTorecord">minutes To record:  </label>
+     <input type="int" name="minutesTorecord" placeholder="60" required="required">
+     <br>
+     <br>
+     <label for="candle_kind">candle kind:  </label>
+     <select id="candle_kind" name="candle_kind", placeholder="candle_kind", required="required">
+       <option value="0">1m</option>
+       <option value="1">5m</option>
+       <option value="2">1h</option>
+       <option value="3">1D</option>
+     </select>
+     <br>
+     <br>
+     <label for="new_old">record new data:  </label>
+     <select id="new_old" name="new_old" placeholder="yes/no", required="required">
+       <option value="0">yes</option>
+       <option value="1">no</option>
+     </select>
+     <br>
+     <br>
+     <button type="submit" class="btn btn-primary btn-block btn-large">Predict Medical Charges</button>
+   </form>
+   <h2 style="text-align:left">ML form</h2>
+    <form action="{{ url_for('admin')}}" method="post">
+      <label for="number" colo>Number neurals:  </label>
+      <input type="int" name="number" placeholder="number" required="required">
+      <br>
+      <br>
+      <label for="market">Market:  </label>
+      <input type="text" name="market" placeholder="market" required="required">
+      <br>
+      <br>
+      <label for="numEpochs">numEpochs:  </label>
+      <input type="int" name="numEpochs" placeholder="70" required="required">
+      <br>
+      <br>
+      <label for="batchSize">batchSize:  </label>
+      <input type="int" name="batchSize" placeholder="70" required="required">
+      <br>
+      <br>
+      <label for="active">Activation Function:  </label>
+      <select id="active" name="active", placeholder="active", required="required">
+        <option value="0">tanh</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 & above</option>
+      </select>
+      <br>
+      <br>
+      <label for="Optimazer">Optimazer:  </label>
+      <select id="Optimazer" name="Optimazer" placeholder="Optimazer", required="required">
+        <option value="0">adam</option>
+        <option value="1">Female</option>
+      </select>
+      <br>
+      <br>
+      <label for="Loss_function">Loss function:  </label>
+      <select id="Loss_function" name="Loss_function", placeholder="mean_squared_error", required="required">
+        <option value="0">mean_squared_error</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      <br>
+      <label for="Region">Region:  </label>
+      <select id="Region" name="Region", placeholder="Region", required="required">
+        <option value="0">Northeast</option>
+        <option value="1">Northwest</option>
+        <option value="2">Southeast</option>
+        <option value="3">Southwest</option>
+      </select>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Medical Charges</button>
+    </form>
+    <br>
+    <br>
+    <h2>
+    {{ prediction_text }}
+    </h2>
+  </div>
+</body>
+</html>

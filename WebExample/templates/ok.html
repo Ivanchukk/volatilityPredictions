@@ -1,0 +1,29 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+  <i><div style="color: rgb(0, 38, 255);">{{cn}}</div></i>
+
+  <table class="table" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">Mean absolute error</th>
+        <th scope="col">Mean absolute error std</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      <tr>
+        <th >{{val}}</th>
+        <td>{{doss}}</td>
+      </tr>
+
+      
+    </tbody>
+  </table>
+
+  <body>
+    <img src="{{ user_image }}" alt="User Image">
+  </body>
+
+{% endblock %} 

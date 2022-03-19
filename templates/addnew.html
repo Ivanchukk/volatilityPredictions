@@ -1,0 +1,44 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+<form style="margin-left: 5%;margin-right: 5%;" action="/additem" method="POST">
+    <div class="mb-3">
+      <label for="market" class="form-label">Market</label>
+      <input type="text" class="form-control" id="market" name="market">
+    </div>
+    <div class="mb-3">
+      <label for="rooms" class="form-label">Rooms</label>
+      <input type="text" class="form-control" id="rooms" name="rooms">
+    </div>
+    <div class="mb-3">
+        <label for="floor" class="form-label">Floor</label>
+        <input type="text" class="form-control" id="floor" name="floor">
+      </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="elevator" name="elev">
+      <label class="form-check-label" for="elevator">Elevator</label>
+    </div>
+    <div class="mb-3">
+        <label for="park" class="form-label">Parkings</label>
+        <input type="text" class="form-control" id="park" name="park">
+      </div>
+      <div class="mb-3">
+        <select class="form-select mb-3" aria-label="Default select example" name="btype">
+            <option selected>Open this select menu</option>
+            <option value="1">בית משותף</option>
+            <option value="2">דו משפחתי</option>
+         <option value="3">בית פרטי</option>
+        </select>
+    </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price" name="price">
+      </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  <!-- <form style="margin-left: 5%;margin-right: 5%;" action="/open dtale" method="POST">
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form> -->
+  
+  {% endblock %} 

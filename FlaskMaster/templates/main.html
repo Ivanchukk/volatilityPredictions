@@ -1,0 +1,67 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/addnew">Add</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  active" href="/predict">Predict</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/admin">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/alerts">Alerts</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+      <h1>List:</h1>
+
+      <table class="table" style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">Area</th>
+            <th scope="col">Rooms</th>
+            <th scope="col">Price</th>
+            <th scope="col">Deatils</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i,row in data.iterrows() %}
+
+          <tr>
+            <th >{{row.area}}</th>
+            <td>{{row.rooms}}</td>
+            <td>{{row.price}}</td>
+            <td><a href='/details/{{i}}'>more...</a></td>
+          </tr>
+
+            {% endfor %}
+          
+        </tbody>
+      </table>
+      {% endblock %}  
+
+
+
+
+</body>

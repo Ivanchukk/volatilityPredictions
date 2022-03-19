@@ -1,0 +1,33 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+<head>
+  <title>Results</title>
+</head>
+<h2><div style="color: blue;">Details Table</div></h2>
+  <table class="table" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">Mean absolute error</th>
+        <th scope="col">Mean absolute error std</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      <tr>
+        <th >{{val}}</th>
+        <td>{{doss}}</td>
+      </tr>
+
+      
+    </tbody>
+  </table>
+
+
+  <h2><div style="color: blue;">Predictions Chart</div></h2>
+  <body>
+    <img src="{{ user_image }}" alt="User Image">
+  </body>
+
+{% endblock %} 

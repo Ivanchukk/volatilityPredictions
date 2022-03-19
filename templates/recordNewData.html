@@ -1,0 +1,34 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+<form style="margin-left: 5%;margin-right: 5%;" action="/recordNewData" method="POST">
+    <div class="mb-3">
+      <label for="market" class="form-label">Market</label>
+      <input type="text" class="form-control" id="market" name="market" placeholder="KNC/USDT">
+    </div>
+    <div class="mb-3">
+      <select class="form-select mb-3" aria-label="Default select example" name="btype">
+        <option selected>Do you want to start new recording</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+    </select>
+    </div>
+    <p style="text-align:left">Fill date only if new recording - The recording will pull API request from inserted date untill now. if you will ask long period of time with 1m/1h candle it will take long time to finish.</p>
+    <div class="mb-3">
+      <label for="recoDate" class="form-label">Record Starting Date</label>
+      <input type="text" class="form-control" id="recoDate" name="recoDate" placeholder="2022-01-01">
+    </div>
+    <div class="mb-3">
+        <label for="candleKind" class="form-label">Candle kind</label>
+        <input type="text" class="form-control" id="candleKind" name="candleKind" placeholder="1m/1h/1d">
+    </div>
+    <p style="text-align:left">How many minutes do you want to record in one request - This use only in case you want record new data while sleep time</p>
+    <div class="mb-3 form-check">
+      <label for="minutesToRecord" class="form-label">Minutes to Record</label>
+      <input type="text" class="form-control" id="minutesToRecord" name="minutesToRecord" placeholder="1">
+    </div>
+
+      
+    <button type="submit" class="btn btn-primary">Record</button>
+  </form>
+  {% endblock %} 
